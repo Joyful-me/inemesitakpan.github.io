@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inemesit Joy Akpan - Your Operations Ally</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.7;
+            color: #333;
+            background: #f4f7fa;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 2rem auto;
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Header Section */
+        .header {
+            background: linear-gradient(120deg, #3b82f6 0%, #7c3aed 100%);
+            color: #fff;
+            padding: 5rem 2rem;
+            text-align: center;
+            border-radius: 15px 15px 0 0;
+            position: relative;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
+            opacity: 0.5;
+        }
+
+        .profile-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            font-weight: 600;
+            color: #3b82f6;
+            border: 4px solid rgba(255, 255, 255, 0.4);
+            z-index: 1;
+        }
+
+        .header h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            z-index: 1;
+            position: relative;
+        }
+
+        .header .tagline {
+            font-size: 1.2rem;
+            font-weight: 300;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            z-index: 1;
+            position: relative;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            z-index: 1;
+            position: relative;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 0.6rem 1.2rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-3px);
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        /* Impact Section */
+        .impact {
+            padding: 3rem 2rem;
+            background: #f9fafb;
+            text-align: center;
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .impact-item {
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .impact-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .impact-number {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #3b82f6;
+        }
+
+        .impact-label {
+            font-size: 1rem;
+            color: #555;
+            margin-top: 0.5rem;
+        }
+
+        /* About Section */
+        .about {
+            padding: 4rem 2rem;
+            text-align: center;
+            background: #fff;
+        }
+
+        .about h2 {
+            font-size: 2.3rem;
+            color: #1e3c72;
+            margin-bottom: 1rem;
+        }
+
+        .about-highlight {
+            font-size: 1.2rem;
+            color: #3b82f6;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .about-description {
+            font-size: 1.1rem;
+            color: #444;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 4rem 2rem;
+            background: linear-gradient(120deg, #e0f2fe 0%, #ede9fe 100%);
+        }
+
+        .services h2 {
+            text-align: center;
+            font-size: 2.3rem;
+            color: #1e3c72;
+            margin-bottom: 2rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 4px solid #3b82f6;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #3b82f6;
+        }
+
+        .service-card h3 {
+            font-size: 1.4rem;
+            color: #1e3c72;
+            margin-bottom: 0.8rem;
+        }
+
+        .service-card p {
+            color: #555;
+            font-size: 0.95rem;
+        }
+
+        /* Experience Section */
+        .experience {
+            padding: 4rem 2rem;
+            background: #fff;
+        }
+
+        .experience h2 {
+            text-align: center;
+            font-size: 2.3rem;
+            color: #1e3c72;
+            margin-bottom: 2rem;
+        }
+
+        .timeline {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 25px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: #3b82f6;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2.5rem;
+            padding-left: 60px;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 15px;
+            top: 5px;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: #3b82f6;
+            border: 3px solid #fff;
+            box-shadow: 0 0 0 3px #3b82f6;
+        }
+
+        .timeline-content {
+            background: #f9fafb;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .timeline-content h3 {
+            color: #1e3c72;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content .company {
+            color: #3b82f6;
+            font-weight: 500;
+            font-size: 1rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .achievement {
+            background: #fff;
+            padding: 1rem;
+            margin: 0.8rem 0;
+            border-left: 3px solid #3b82f6;
+            border-radius: 0 8px 8px 0;
+            font-size: 0.9rem;
+        }
+
+        /* Skills Section */
+        .skills {
+            padding: 4rem 2rem;
+            background: #1e3c72;
+            color: #fff;
+        }
+
+        .skills h2 {
+            text-align: center;
+            font-size: 2.3rem;
+            margin-bottom: 2rem;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .skill-category {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+            backdrop-filter: blur(8px);
+        }
+
+        .skill-category h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-tag {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 0.4rem 0.9rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            transition: background 0.3s ease;
+        }
+
+        .skill-tag:hover {
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        /* CTA Section */
+        .cta {
+            padding: 4rem 2rem;
+            background: linear-gradient(120deg, #3b82f6 0%, #7c3aed 100%);
+            color: #fff;
+            text-align: center;
+            border-radius: 0 0 15px 15px;
+        }
+
+        .cta h2 {
+            font-size: 2.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.8rem 2rem;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: #fff;
+            color: #1e3c72;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #fff;
+            border: 2px solid #fff;
+        }
+
+        .btn-secondary:hover {
+            background: #fff;
+            color: #1e3c72;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .header .tagline {
+                font-size: 1rem;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .impact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline::before {
+                left: 15px;
+            }
+
+            .timeline-item {
+                padding-left: 45px;
+            }
+
+            .timeline-dot {
+                left: 5px;
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header">
+            <div class="profile-image">IJ</div>
+            <h1>Inemesit Joy Akpan</h1>
+            <p class="tagline">Your trusted partner in streamlining operations and boosting productivity</p>
+            <div class="contact-info">
+                <a href="mailto:inemesita58@gmail.com" class="contact-item">
+                    <span>📧</span>
+                    <span>inemesita58@gmail.com</span>
+                </a>
+                <a href="tel:+2347064632506" class="contact-item">
+                    <span>📱</span>
+                    <span>+234-706-463-2506</span>
+                </a>
+                <a href="https://linkedin.com/in/inemesitjoyakpan" class="contact-item">
+                    <span>💼</span>
+                    <span>LinkedIn Profile</span>
+                </a>
+            </div>
+        </header>
+
+        <!-- Impact Section -->
+        <section class="impact">
+            <div class="impact-grid">
+                <div class="impact-item fade-in">
+                    <span class="impact-number">65%</span>
+                    <div class="impact-label">Boost in Client Engagement</div>
+                </div>
+                <div class="impact-item fade-in">
+                    <span class="impact-number">45%</span>
+                    <div class="impact-label">Time Saved on Tasks</div>
+                </div>
+                <div class="impact-item fade-in">
+                    <span class="impact-number">4+</span>
+                    <div class="impact-label">Years of Expertise</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about">
+            <h2>Your Operations, Elevated</h2>
+            <p class="about-highlight">I turn chaos into clarity, so you can focus on what matters most</p>
+            <p class="about-description">
+                I’m Inemesit, a detail-obsessed Executive Assistant with a knack for making businesses run like clockwork. With over 4 years of experience, I specialize in creating seamless systems, automating repetitive tasks, and managing complex schedules. Whether it’s boosting client engagement by 65% with smart CRM strategies or cutting task time by 45% through clever automations, I’m here to help leaders like you thrive.
+            </p>
+        </section>
+
+        <!-- Services Section -->
+        <section class="services">
+            <h2>What I Bring to the Table</h2>
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <div class="service-icon">🚀</div>
+                    <h3>CRM Mastery</h3>
+                    <p>Supercharge your client relationships with tailored CRM solutions. I’ve increased engagement rates by 65% using platforms like HubSpot, creating automated workflows that keep your leads warm and your team aligned.</p>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">🕒</div>
+                    <h3>Schedule Harmony</h3>
+                    <p>Say goodbye to calendar chaos. I manage complex schedules across time zones, ensuring every meeting is perfectly timed and prepped, so you can focus on the big picture.</p>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">⚙️</div>
+                    <h3>Process Automation</h3>
+                    <p>Save hours with custom automations and streamlined workflows. I’ve reduced manual tasks by 45% using tools like Zapier and Google Scripts, letting your team work smarter, not harder.</p>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">📋</div>
+                    <h3>Project Coordination</h3>
+                    <p>Keep projects on track with clear communication and tools like Asana. I manage deadlines, align stakeholders, and ensure every deliverable lands on time.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section class="experience">
+            <h2>My Journey</h2>
+            <div class="timeline">
+                <div class="timeline-item fade-in">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Freelance Executive Assistant & CRM Specialist</h3>
+                        <div class="company">Various Clients | Feb 2021 – Present</div>
+                        <p>Partnering with entrepreneurs and executives to streamline operations and drive results.</p>
+                        <div class="achievement">📈 Boosted client engagement by 65% with HubSpot automations.</div>
+                        <div class="achievement">⚙️ Automated repetitive tasks, saving 45% of admin time.</div>
+                        <div class="achievement">📅 Coordinated multi-timezone schedules with zero conflicts.</div>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Administrative Lead</h3>
+                        <div class="company">Just Fragrance Beauty & Spa | Mar 2019 – Jan 2021</div>
+                        <p>Transformed daily operations in a fast-paced retail setting.</p>
+                        <div class="achievement">📁 Built a digital filing system, cutting retrieval time by 60%.</div>
+                        <div class="achievement">🤝 Enhanced client and vendor relationships as the go-to liaison.</div>
+                        <div class="achievement">🕒 Optimized schedules for a team of 10, improving service flow.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="skills">
+            <h2>My Toolkit</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>CRM & Automation</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">HubSpot</span>
+                        <span class="skill-tag">Salesforce</span>
+                        <span class="skill-tag">Zapier</span>
+                        <span class="skill-tag">Google Scripts</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Project Management</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Asana</span>
+                        <span class="skill-tag">Trello</span>
+                        <span class="skill-tag">Monday.com</span>
+                        <span class="skill-tag">Slack</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Productivity Tools</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Google Workspace</span>
+                        <span class="skill-tag">Microsoft Office</span>
+                        <span class="skill-tag">Calendly</span>
+                        <span class="skill-tag">Notion</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="cta">
+            <h2>Let’s Make Your Workday Smoother</h2>
+            <p>Ready to streamline your operations and focus on growth? Let’s connect and make it happen.</p>
+            <div class="cta-buttons">
+                <a href="mailto:inemesita58@gmail.com" class="btn btn-primary">Get in Touch</a>
+                <a href="https://linkedin.com/in/inemesitjoyakpan" class="btn btn-secondary">See My LinkedIn</a>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Fade-in animation on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.2 });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
